@@ -1,0 +1,67 @@
+<div class="col-sm" >
+  <br><h1>Enquiry Details</h1><br>
+  <form (ngSubmit)="onSubmit()">
+
+    <!-- <div class="form-group">
+        <label>id</label>
+        <input type="text" class="form-control" id="id"
+         [(ngModel)]="enquiry.enq_id" name="id">
+       </div> -->
+     
+  <div class="form-group">
+   <label>Name</label>
+   <input type="text" class="form-control" id="name"
+    [(ngModel)]="enquiry.enq_name" name="name">
+  </div>
+
+     <div class="form-group">
+        <label>pan card</label>
+        <input type="text" class="form-control" 
+         [(ngModel)]="enquiry.enqpancardno" name="pan">
+       </div>
+  
+  <div class="form-group">
+    <label>mobile</label>
+    <input type="text" class="form-control"
+      [(ngModel)]="enquiry.enq_mobno" name="mobile"> 
+   </div>
+
+   <div class="form-group">
+    <label>required amount</label>
+    <input type="text" class="form-control" 
+     [(ngModel)]="enquiry.enq_requird_amount" name="enq_requird_amount" >
+   </div>
+
+   <div class="form-group">
+    <label>age</label>
+    <input type="text" class="form-control" 
+     [(ngModel)]="enquiry.enq_age" name="age" >
+   </div>
+   
+   <div class="form-group">
+    <label>Product Name</label>
+    <input type="text" class="form-control" 
+     [(ngModel)]="enquiry.enq_vehicle_name" name="enq_product_name" >
+   </div>
+
+   <div class="form-group">
+    <label>Email</label>
+    <input type="email" class="form-control" 
+     [(ngModel)]="enquiry.email" name="email" >
+   </div>
+   
+   <!-- <div class="form-group">
+    <label>status</label>
+    <select name="status" id="status" [(ngModel)]="enquiry.status">
+          <option value="pending">Pending</option>
+    </select>
+    
+   </div> -->
+
+    
+  
+   <button class="btn btn-success" type="submit">Submit</button>
+ 
+  </form>
+
+</div>

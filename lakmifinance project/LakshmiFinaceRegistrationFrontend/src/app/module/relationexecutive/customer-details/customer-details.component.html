@@ -1,0 +1,193 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+  
+</head>
+<body>
+
+<form action="index.html" method="post">
+
+  <h1>Customer Details</h1>
+  
+  <fieldset>
+    <legend><span class="number">1</span>Customer basic info</legend>
+
+    <label for="customerId">Id:</label>
+    <input type="text" id="customerId" name="customerId" [(ngModel)]="s.customer.customerId">
+
+    <label for="name">Name:</label>
+    <input type="text" id="customerName" name="customerName" [(ngModel)]="s.customer.customerName">
+    
+    <label for="customerMobileNo">Mobile:</label>  
+    <input type="email" id="customerMobileNo" name="customerMobileNo" [(ngModel)]="s.customer.customerMobileNo">
+    
+    <label for="customerLoanAmount">Required Amount</label>
+    <input type="text" id="customerLoanAmount" name="customerLoanAmount" [(ngModel)]="s.customer.customerLoanAmount">
+    
+    <label for="customerAge">Age:</label>
+    <input type="text" name="customerAge" id="customerAge" [(ngModel)]="s.customer.customerAge">
+
+    <label for="customerdDateOfBirth">Date Of Birth</label>
+    <input type="text" name="customerdDateOfBirth" id="customerdDateOfBirth" [(ngModel)]="s.customer.customerdDateOfBirth">
+
+    <label for="customerEmail">Email:</label>
+    <input type="text" name="customerEmail" id="customerEmail" [(ngModel)]="s.customer.customerEmail">
+
+    <label for="customerPancardNo">Pan Card:</label>
+    <input type="text" name="customerPancardNo" id="customerPancardNo" [(ngModel)]="s.customer.customerPancardNo">
+  </fieldset>
+
+  <fieldset>
+    <legend><span class="number">2</span>Address</legend>
+    <label for="loaclHouseNo">Loacl House No:</label>
+    <input type="text" id="loaclHouseNo" name="loaclHouseNo" [(ngModel)]="s.customer.address.loaclHouseNo">
+
+    <label for="localArea">Local Area:</label>
+    <input type="text" id="localArea" name="localArea" [(ngModel)]="s.customer.address.localArea">
+
+    <label for="localLandmark">Local Landmark:</label>
+    <input type="text" id="localLandmark" name="localLandmark" [(ngModel)]="s.customer.address.localLandmark">
+
+    <label for="cityname">Local City Name:</label>
+    <input type="text" id="cityname" name="cityname" [(ngModel)]="s.customer.address.localCity.cityname">
+
+    <label for="citypincode">Local City Pincode:</label>
+    <input type="text" id="citypincode" name="citypincode" [(ngModel)]="s.customer.address.localCity.citypincode">
+
+    <label for="stateName">State:</label>
+    <input type="text" id="stateName" name="stateName" [(ngModel)]="s.customer.address.localCity.state.stateName">
+
+
+    <label for="permanantHouseNo"> Permanant House No:</label>
+    <input type="text" id="permanantHouseNo" name="permanantHouseNo" [(ngModel)]="s.customer.address.permanantHouseNo">
+
+    
+    <label for="permanantArea"> Permanant Area:</label>
+    <input type="text" id="permanantArea" name="permanantArea" [(ngModel)]="s.customer.address.permanantArea">
+
+    
+    <label for="permanantLandmark">Permanant Landmark:</label>
+    <input type="text" id="permanantLandmark" name="permanantLandmark" [(ngModel)]="s.customer.address.permanantLandmark">
+
+    
+    <label for="cityname">City Name:</label>
+    <input type="text" id="cityname" name="cityname" [(ngModel)]="s.customer.address.permanantcity.cityname">
+
+    <label for="citypincode">City pincode:</label>
+    <input type="text" id="citypincode" name="citypincode" [(ngModel)]="s.customer.address.permanantcity.citypincode">
+    
+    <label for="stateName">State:</label>
+    <input type="text" id="stateName" name="stateName" [(ngModel)]="s.customer.address.permanantcity.state.stateName">
+    
+    <label for="countryName">Country:</label>
+    <input type="text" id="countryName" name="countryName" [(ngModel)]="s.customer.address.country.countryName">
+    
+    
+  </fieldset>
+  
+  <fieldset>
+    <legend><span class="number">3</span>Vehical Details</legend>
+    
+    <label for="modelNo">Model Number:</label>
+    <input type="text" id="modelNo" name="modelNo" [(ngModel)]="s.customer.vehical.modelNo">
+
+    <label for="dealer">Dealer:</label>
+    <input type="text" id="dealer" name="dealer" [(ngModel)]="s.customer.vehical.dealer">
+
+    <label for="price">price:</label>
+    <input type="text" id="price" name="price" [(ngModel)]="s.customer.vehical.price">
+
+    <label for="onRoadPrice">On Road Price:</label>
+    <input type="text" id="onRoadPrice" name="onRoadPrice" [(ngModel)]="s.customer.vehical.onRoadPrice">
+   
+  </fieldset>
+
+  <fieldset>
+    <legend><span class="number">4</span>Bank Details</legend>
+    
+    <label for="bankName">Bank Name:</label>
+    <input type="text" id="bankName" name="bankName" [(ngModel)]="s.customer.bank.bankName">
+
+    <label for="accountNumber">Account Number:</label>
+    <input type="text" id="accountNumber" name="accountNumber" [(ngModel)]="s.customer.bank.accountNumber">
+
+    <label for="accountHolderName">Account Holder Name:</label>
+    <input type="text" id="price" name="accountHolderName" [(ngModel)]="s.customer.bank.accountHolderName">
+
+    <label for="bankIfsc">Bank Ifsc:</label>
+    <input type="text" id="bankIfsc" name="bankIfsc" [(ngModel)]="s.customer.bank.bankIfsc">
+
+    <label for="bankMicr">Bank Micr:</label>
+    <input type="text" id="bankMicr" name="bankMicr" [(ngModel)]="s.customer.bank.bankMicr">
+
+    <label for="bankAddress">Bank Address:</label>
+    <input type="text" id="bankAddress" name="bankAddress" [(ngModel)]="s.customer.bank.bankAddress">
+   
+  </fieldset>
+  <fieldset>
+    <legend><span class="number">5</span>Guarantor Details</legend>
+    
+    <label for="guaranterNmae">Name:</label>
+    <input type="text" id="guaranterNmae" name="guaranterNmae" [(ngModel)]="s.customer.guaranter.guaranterNmae">
+
+    <label for="guaranterAddress">Address:</label>
+    <input type="text" id="guaranterAddress" name="guaranterAddress" [(ngModel)]="s.customer.guaranter.guaranterAddress">
+
+    <label for="guaranterRelationWithcustomer">Relation:</label>
+    <input type="text" id="guaranterRelationWithcustomer" name="guaranterRelationWithcustomer" [(ngModel)]="s.customer.guaranter.guaranterRelationWithcustomer">
+    
+    <label for="guranterMobileNoe">Mobile no:</label>
+    <input type="text" id="guranterMobileNo" name="guranterMobileNo" [(ngModel)]="s.customer.guaranter.guranterMobileNo">
+
+    <label for="addharCardNo">Aadhar No:</label>
+    <input type="text" id="addharCardNo" name="addharCardNo" [(ngModel)]="s.customer.guaranter.addharCardNo">
+
+    <label for="jobdetails">Profession:</label>
+    <input type="text" id="jobdetails" name="jobdetails" [(ngModel)]="s.customer.guaranter.jobdetails">
+
+  </fieldset>
+    <fieldset>
+    <legend><span class="number">6</span>Previous Loan Details</legend>
+    
+    <label for="previousLoanamount">previous Loan Amount:</label>
+    <input type="text" id="previousLoanamount" name="previousLoanamount" [(ngModel)]="s.customer.loandetails.previousLoanamount">
+
+    <label for="previousLoanStatus">Previous Loan Status:</label>
+    <input type="text" id="previousLoanStatus" name="previousLoanStatus" [(ngModel)]="s.customer.loandetails.previousLoanStatus">
+
+    <label for="tenure">Tenure:</label>
+    <input type="text" id="tenure" name="tenure" [(ngModel)]="s.customer.loandetails.tenure">
+
+    <label for="previousLoanStatus">Paid Amount:</label>
+    <input type="text" id="paidAmount" name="paidAmount" [(ngModel)]="s.customer.loandetails.paidAmount">
+
+    <label for="reaminingAmount">Remaining Amount:</label>
+    <input type="text" id="reaminingAmount" name="reaminingAmount" [(ngModel)]="s.customer.loandetails.reaminingAmount">
+
+    <label for="bankName">Previous Loan Bank Name:</label>
+    <input type="text" id="bankName" name="bankName" [(ngModel)]="s.customer.loandetails.bank.bankName">
+
+    <label for="accountNumber">Previous Loan Account Number:</label>
+    <input type="text" id="accountNumber" name="accountNumber" [(ngModel)]="s.customer.loandetails.bank.accountNumber">
+
+    <label for="accountHolderName">Account Holder Name:</label>
+    <input type="text" id="accountHolderName" name="accountHolderName" [(ngModel)]="s.customer.loandetails.bank.accountHolderName">
+
+    <label for="bankIfsc">Ifsc Code:</label>
+    <input type="text" id="bankIfsc" name="bankIfsc" [(ngModel)]="s.customer.loandetails.bank.bankIfsc">
+
+    <label for="bankMicr">Bank Micr:</label>
+    <input type="text" id="bankMicr" name="bankMicr" [(ngModel)]="s.customer.loandetails.bank.bankMicr">
+
+    <label for="bankAddress">Bank Address:</label>
+    <input type="text" id="bankAddress" name="bankAddress" [(ngModel)]="s.customer.loandetails.bank.bankAddress">
+
+  </fieldset>
+  <button type="submit" (click)='addCustomer(s.customer)'>Save </button>
+  <button type="submit" (click)='docs(s.customer.customerId)' class="btn btn-warning"> Next</button>
+</form>
+
+</body>
+</html>

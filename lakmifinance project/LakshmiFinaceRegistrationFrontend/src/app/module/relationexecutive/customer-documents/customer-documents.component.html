@@ -1,0 +1,105 @@
+
+<form (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+      <label></label>
+      <input type="hidden" class="form-control" id="id"
+       [(ngModel)]="file.documentid" name="id" >
+     </div>
+  <div class="form-group">
+      <div class="col-sm-4">
+      <input type="hidden" class="form-control" id="customer_id"
+       [(ngModel)]="file.customerid" name="customer_id" placeholder="enter id">
+     </div>
+    </div>
+   
+ <div class="form-group">
+  <div class="col-sm-4">
+ <label>pancard</label> 
+ <img [src]="pancard" height="200"> <br/>
+  <input type="file" class="form-control"
+ (change)="onSelectedFile1($event)" name="pancard">
+
+</div>
+ </div>
+<div class="form-group">
+  <div class="col-sm-4">
+  <label>addharcard</label>
+  <img [src]="addharcard" height="200"> <br/>
+  <input type="file" class="form-control"
+  (change)="onSelectedFile2($event)" name="addharcard">
+ </div>
+</div>
+ <div class="form-group">
+  <div class="col-sm-4">
+  <label>photo</label>
+  <img [src]="photo" height="200"> <br/>
+  <input type="file" class="form-control"
+  (change)="onSelectedFile3($event)" name="photo">
+ </div>
+ </div>
+
+ <div class="form-group">
+  <div class="col-sm-4">
+  <label>signature</label>
+  <img [src]="signature" height="200"> <br/>
+  <input type="file" class="form-control"
+  (change)="onSelectedFile4($event)" name="signature">
+ </div>
+ </div>
+
+ <div class="form-group">
+  <div class="col-sm-4">
+  <label>postdatedcheck</label>
+  <img [src]="postdatedcheck" height="200"> <br/>
+  <input type="file" class="form-control"
+  (change)="onSelectedFile5($event)" name="postdatedcheck">
+ </div>
+ </div>
+
+ <div class="form-group">
+  <div class="col-sm-4">
+  <label>thumb</label>
+  <img [src]="thumb" height="200"> <br/>
+  <input type="file" class="form-control"
+  (change)="onSelectedFile6($event)" name="thumb">
+ </div>
+ </div>
+
+ <div class="form-group">
+  <div class="col-sm-4">
+  <label>bankstatement</label>
+  <img [src]="bankstatement" height="200"> <br/>
+  <input type="file" class="form-control"
+  (change)="onSelectedFile7($event)" name="bankstatement">
+ </div>
+ </div>
+
+ <div class="form-group">
+  <div class="col-sm-4">
+  <label>itrfile</label>
+  <img [src]="itrfile" height="200"> <br/>
+  <input type="file" class="form-control"
+  (change)="onSelectedFile8($event)" name="itrfile">
+ </div>
+ </div>
+
+ <div class="form-group">
+  <div class="col-sm-4">
+  <label>salaryslip</label>
+  <img [src]="salaryslip" height="200"> <br/>
+  <input type="file" class="form-control"
+  (change)="onSelectedFile9($event)" name="salaryslip">
+ </div>
+ </div>
+
+ <div class="form-group">
+  <div class="col-sm-4">
+  <label>previousloanstatement</label>
+  <img [src]="previousloanstatement" height="200"> <br/>
+  <input type="file" class="form-control"
+  (change)="onSelectedFile10($event)" name="previousloanstatement">
+ </div>
+ </div>
+ <button class="btn btn-success" type="submit" style="margin-left: 100px;">Submit</button>
+</form>

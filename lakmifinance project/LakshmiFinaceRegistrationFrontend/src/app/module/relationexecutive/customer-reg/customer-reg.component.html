@@ -1,0 +1,230 @@
+<form [formGroup]="registrationform">
+  <div>
+    <div class="col-sm" >
+      <h1>Customer Details</h1>
+      <div >
+        <label>Customer Personal Details</label><br>
+        <div formGroupName='user'>
+          <div  class="form-group">
+            <label>Customer Firstname</label>
+            <input type="text" class="form-control" formControlName='firstname'>
+          </div>
+          <div  class="form-group">
+            <label>Customer Lastname</label>
+            <input type="text" class="form-control" formControlName='lastname'>
+          </div>  <div  class="form-group">
+            <label>Customer email</label>
+            <input type="text" class="form-control" formControlName='email'>
+          </div>  <div  class="form-group">
+            <label>Customer mobile</label>
+            <input type="text" class="form-control" formControlName='mobile'>
+          </div>  <div  class="form-group">
+            <label>Customer Date of Birth</label>
+            <input type="text" class="form-control" formControlName='dob'>
+          </div>  <div  class="form-group" >
+            <label>Customer Gender</label>
+            <input type="text" class="form-control"formControlName='gender'>
+          </div>
+
+          <div formGroupName='address'>
+            <label>Customer Address Details</label><br>
+            <div  class="form-group" >
+              <label>Local House No</label>
+              <input type="text" class="form-control" formControlName='loaclHouseNo'>
+            </div>  <div  class="form-group">
+              <label>Local Area Name</label>
+              <input type="text" class="form-control" formControlName='localArea'>
+            </div>  <div  class="form-group">
+              <label>Local Landmark</label>
+              <input type="text" class="form-control" formControlName='localLandmark'>
+            </div>  <div  class="form-group">
+              <label>Local City</label>
+              <input type="text" class="form-control" formControlName='localCity'>
+            </div>  <div  class="form-group">
+              <label>Local State</label>
+              <input type="text" class="form-control" formControlName='localState'>
+            </div> <div  class="form-group">
+              <label>Permanant House No</label>
+              <input type="text" class="form-control" formControlName='permanantHouseNo'>
+            </div>  <div  class="form-group">
+              <label>Permanant Area Name</label>
+              <input type="text" class="form-control" formControlName='permanantArea'>
+            </div>  <div  class="form-group">
+              <label>Permanant Landmark</label>
+              <input type="text" class="form-control" formControlName='permanantLandmark'>
+            </div>  <div  class="form-group">
+              <label>Permanant City</label>
+              <input type="text" class="form-control" formControlName='permanatcity'>
+            </div>  <div  class="form-group">
+              <label>Permanant State</label>
+              <input type="text"class="form-control" formControlName='permanatState'>
+            </div> <div  class="form-group">
+              <label>Country</label>
+              <input type="text" class="form-control" formControlName='country'>
+            </div>  
+            
+          </div>
+           <div  class="form-group">
+            <label class="heading">Authentication Details</label><br>
+            <label>Customer Username</label>
+            <input type="text" class="form-control" formControlName='username'>
+          </div>  <div  class="form-group">
+            <label>Customer Password</label>
+            <input type="text" class="form-control" formControlName='password'>
+          </div>
+
+        </div>
+      </div>
+      <div  class="form-group">
+        <label>Customer Required loan Details</label><br>
+        <label>Customer Loan Amount</label>
+        <input type="text" class="form-control"formControlName='customerLoanAmount'>
+      </div>
+      <div  class="form-group">
+        <label>Customer Tenure</label>
+        <input type="text" class="form-control"formControlName='tenure'>
+      </div>
+      <div  class="form-group">
+        <label>Customer Pancard No </label>
+        <input type="text" class="form-control"formControlName='customerPancardNo'>
+      </div>
+      <div  class="form-group">
+        <label>Customer Aadharcard No </label>
+        <input type="text" class="form-control"formControlName='customerAdhardNo'>
+      </div><div  class="form-group">
+        <label>Customer Loan Type </label>
+        <input type="text" class="form-control"formControlName='customerLoanType'>
+      </div>customerLoanType
+    </div>
+    <div class="form-group" formArrayName="electronicItem">     
+      <label>Electronic Product Details</label><br>                            
+      <div class="col-sm-10" *ngFor=" let group of ElectronicItemArray.controls; let i=index;" [formGroupName]='i'>
+              <label class="col-sm-2 control-label">Product no-{{i+1}}</label>
+                    <div class="form-group">
+                      <label for="">Product Company</label>
+                      <input type="text" class="form-control" formControlName="productCompany" placeholder="Product Company" />
+                    </div><div class="form-group">
+                      <label for="">Product Name</label>
+                      <input type="text" class="form-control" formControlName="productName" placeholder="Product Name" />
+                    </div><div class="form-group">
+                      <label for="">Product Price</label>
+                      <input type="text" class="form-control" formControlName="productPrice" placeholder="Product Price" />
+                    </div><div class="form-group">
+                      <label for="">Dealer Name</label>
+                      <input type="text" class="form-control" formControlName="dealerName" placeholder="Dealer Name" />
+                    </div>
+             
+              <button type="button"(click)="addProduct()" class="btn btn-success  btn-sm btn-add-phone"><span class="glyphicon glyphicon-plus"></span>Add Product</button>&nbsp;
+              <button type="button"(click)="removeProduct(i)" class="btn btn-success btn-sm btn-add-phone"><span class="glyphicon glyphicon-plus"></span>Remove Product</button>
+      </div><br>
+   </div>
+    <div class="form-group" formArrayName="bank">
+      <label>Band Details</label><br>                                     
+      <div class="col-sm-10" *ngFor=" let group of BankArray.controls; let i=index;" [formGroupName]='i'>
+              <label class="col-md-4">Details of Bank no-{{i+1}}</label>
+                    <div class="form-group">                
+                      <label for="">Bank Name</label>
+                      <input type="text" class="form-control" formControlName="bankName" placeholder="Banck name" />
+                    </div><div class="form-group">
+                      <label for="">Account No</label>
+                      <input type="text" class="form-control" formControlName="accountNumber" placeholder="Account no" />
+                    </div><div class="form-group">
+                      <label for="">Account Holder Name</label>
+                      <input type="text" class="form-control" formControlName="accountHolderName" placeholder="Bank holder name" />
+                    </div><div class="form-group">
+                      <label for="">Bank IFSC Code</label>
+                      <input type="text" class="form-control" formControlName="bankIfsc" placeholder="IFSC code" />
+                    </div><div class="form-group">
+                      <label for="">Bank MIRC Code</label>
+                      <input type="text" class="form-control" formControlName="bankMicr" placeholder="MIRC code" />
+                    </div><div class="form-group">
+                      <label for="">Bank Address</label>
+                      <input type="text" class="form-control" formControlName="bankAddress" placeholder="Bank Address" />
+                    </div>
+            
+              <button type="button"(click)="addBank()" class="btn btn-success  btn-sm btn-add-phone"><span class="glyphicon glyphicon-plus"></span>Add Bank</button>&nbsp;
+              <button type="button"(click)="removeBank(i)" class="btn btn-success btn-sm btn-add-phone"><span class="glyphicon glyphicon-plus"></span>Remove Bank</button>
+       </div><br>
+    </div>
+    <div class="form-group" formArrayName="guarante"> 
+      <label>Ganranter Details</label><br>                                    
+      <div class="col-sm-10" *ngFor=" let group of GuaranteeArray.controls; let i=index;" [formGroupName]='i'>
+              <label class="col-md-4">Details of Guaranter no-{{i+1}}</label>
+                    <div class="form-group">                
+                      <label for="">Guaranter Nmae</label>
+                      <input type="text" class="form-control" formControlName="guaranterNmae" placeholder="Guaranter Nmae" />
+                    </div><div class="form-group">
+                      <label for="">Guaranter Address</label>
+                      <input type="text" class="form-control" formControlName="guaranterAddress" placeholder="Guaranter Address" />
+                    </div><div class="form-group">
+                      <label for="">Guaranter Relation With customer</label>
+                      <input type="text" class="form-control" formControlName="guaranterRelationWithcustomer" placeholder="Guaranter Relation With customer" />
+                    </div><div class="form-group">
+                      <label for="">Guranter Mobile No</label>
+                      <input type="text" class="form-control" formControlName="guranterMobileNo" placeholder="Guranter Mobile No" />
+                    </div><div class="form-group">
+                      <label for="">AddharCard No</label>
+                      <input type="text" class="form-control" formControlName="addharCardNo" placeholder="AddharCard No" />
+                    </div><div class="form-group">
+                      <label for="">Job Details</label>
+                      <input type="text" class="form-control" formControlName="jobdetails" placeholder="Job Details" />
+                    </div>
+            
+              <button type="button"(click)="addGuaranter()" class="btn btn-success  btn-sm btn-add-phone"><span class="glyphicon glyphicon-plus"></span>Add Guaranter</button>&nbsp;
+              <button type="button"(click)="removeGuaranter(i)" class="btn btn-success btn-sm btn-add-phone"><span class="glyphicon glyphicon-plus"></span>Remove Guaranter</button>
+       </div><br>
+    </div>
+    <div>
+      <div class="form-group" formArrayName="loandetails">
+        <label>Previous Loan Details</label><br>                                
+        <div class="col-sm-10" *ngFor=" let group of LoanDetilsArray.controls; let i=index;" [formGroupName]='i'>
+                <label class="col-md-4">Details of Loan no-{{i+1}}</label>
+                      <div class="form-group">                
+                        <label for="">Previous Loan Amount</label>
+                        <input type="text" class="form-control" formControlName="previousLoanamount" placeholder="Previous Loan Amount" />
+                      </div><div class="form-group">
+                        <label for="">Previous Loan Status</label>
+                        <input type="text" class="form-control" formControlName="previousLoanStatus" placeholder="Previous Loan Status" />
+                      </div><div class="form-group">
+                        <label for="">Paid Amount</label>
+                        <input type="text" class="form-control" formControlName="paidAmount" placeholder="Paid Amount" />
+                      </div><div class="form-group">
+                        <label for="">Tenure</label>
+                        <input type="text" class="form-control" formControlName="tenure" placeholder="Tenure of previous loan" />
+                      </div><div class="form-group">
+                        <label for="">Remaining Amount </label>
+                        <input type="text" class="form-control" formControlName="reaminingAmount" placeholder="Remaining Amount" />
+                      </div>
+                      <div class="form-group" formGroupName="bank">                                 
+                        
+                                <label class="col-md-4">Loan Details of Bank no-{{i+1}}</label>
+                                      <div class="form-group">                
+                                        <label for="">Bank Name</label>
+                                        <input type="text" class="form-control" formControlName="bankName" placeholder="Banck name" />
+                                      </div><div class="form-group">
+                                        <label for="">Account No</label>
+                                        <input type="text" class="form-control" formControlName="accountNumber" placeholder="Account no" />
+                                      </div><div class="form-group">
+                                        <label for="">Account Holder Name</label>
+                                        <input type="text" class="form-control" formControlName="accountHolderName" placeholder="Bank holder name" />
+                                      </div><div class="form-group">
+                                        <label for="">Bank IFSC Code</label>
+                                        <input type="text" class="form-control" formControlName="bankIfsc" placeholder="IFSC code" />
+                                      </div><div class="form-group">
+                                        <label for="">Bank MIRC Code</label>
+                                        <input type="text" class="form-control" formControlName="bankMicr" placeholder="MIRC code" />
+                                      </div><div class="form-group">
+                                        <label for="">Bank Address</label>
+                                        <input type="text" class="form-control" formControlName="bankAddress" placeholder="Bank Address" />
+                                      </div>
+                     </div>
+               
+                <button type="button"(click)="addLoanDetils()" class="btn btn-success  btn-sm btn-add-phone"><span class="glyphicon glyphicon-plus"></span>Add Loan Details</button>&nbsp;
+                <button type="button"(click)="removeLoanDetils(i)" class="btn btn-success btn-sm btn-add-phone"><span class="glyphicon glyphicon-plus"></span>Remove Loan Details</button>
+        </div><br>
+     </div> 
+     
+    </div>
+  </div>
+  <button (click)="onclick()">SAVE</button>
+</form>

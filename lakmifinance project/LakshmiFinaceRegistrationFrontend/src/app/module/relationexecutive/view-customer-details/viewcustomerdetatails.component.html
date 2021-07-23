@@ -1,0 +1,33 @@
+<div class="col-sm" >
+    <table class="table table-striped">
+
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Customer Name</th>
+                <th>Loan Amount</th>
+                <th>Loan Type</th>
+                <th>Loan Tenure</th>
+                <th>Costomer Pancard</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let temp of customers">
+            <td>{{temp.customerId}}</td>
+            <td>{{temp.user.firstname}} {{temp.user.lastname}}</td>
+            <td>{{temp.customerLoanAmount}}</td>
+            <td>{{temp.customerLoanType}}</td>
+            <td>{{temp.tenure}}</td>
+            <td>{{temp.customerPancardNo}}</td>
+            <td>{{temp.user.email}}</td>
+            <td>{{temp.user.mobile}}</td>
+            <td>{{temp.status}}</td>         
+    
+        </tr>
+    </tbody>
+    
+    </table>
+</div>

@@ -1,0 +1,33 @@
+
+<table class="table table-striped">
+
+  <thead>
+      <tr>
+          <th>Id</th>
+          <th>Pan Card No</th>
+          <th>Enquiry Name</th>
+          <th>Enquiry Mobile No</th>
+          <th>Required Amount</th>
+          <th>Enquiry Age</th>
+          <th>Electronic Product Name</th>
+          <th>Email</th>
+          <th>Status</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let temp of e">
+        <td>{{temp.enq_id}}</td>
+        <td>{{temp.enqpancardno}}</td>
+        <td>{{temp.enq_name}}</td>
+        <td>{{temp.enq_mobno}}</td>
+        <td>{{temp.enq_requird_amount}}</td>
+        <td>{{temp.enq_age}}</td>
+        <td>{{temp.electronic_product_name}}</td>
+        <td>{{temp.email}}</td>
+        <td>{{temp.status}}</td>
+        
+
+    </tr>
+</tbody>
+
+</table>

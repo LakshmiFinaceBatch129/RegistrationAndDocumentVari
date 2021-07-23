@@ -1,0 +1,31 @@
+.sideBarNav {
+  background: #f7971e; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffd200,
+    #f7971e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffd200,
+    #f7971e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.sideBarWrapper {
+  background-color: #f7971e;
+  height: 100vh;
+}
+
+.anchorWrapper {
+  font-size: x-large;
+  width: 36vh;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+nav {
+  padding: 0px;
+  margin-bottom: 0px;
+}
