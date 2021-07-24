@@ -1,0 +1,16 @@
+<p>display works!</p>
+<div *ngFor="let x of allenquiry">
+  Id:=  {{x.id}}<br>
+  PanCardNo:=  {{x.enqpancardno}}<br>
+  Name:=  {{x.enq_name}}<br>
+  Mobno:=  {{x.enq_mobno}}<br>
+  Require Amount:=  {{x.enq_requird_amount}}<br>
+  Age:=  {{x.enq_age}}<br>
+  Product name:=  {{x.electronic_product_name}}<br>
+  Status:=  {{x.status}}<br>
+  Email:=  {{x.email}}<br>
+  VerifybyR:=  {{x.verifybyre}}<br>
+
+  <a [routerLink]="['/update']" [state]="x">update form</a>
+
+</div>

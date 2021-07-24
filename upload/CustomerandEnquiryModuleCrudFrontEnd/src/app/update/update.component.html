@@ -1,0 +1,34 @@
+<form [formGroup]="updateform" (ngSubmit)="onLoginSubmit()">
+    
+    <h3 style="text-align: center; color: darkviolet;" >! Enquiry Form !</h3>
+    <div>
+        enqpancardno: <input  type="text" formControlName="enqpancardno" placeholder="enter enqpancardno" >
+    </div>
+    <div>
+        enq_name : <input  type="text" formControlName="enq_name" placeholder="enter enq_name" >
+    </div>
+    <div>
+        enq_mobno : <input  type="text" formControlName="enq_mobno" placeholder="enter enq_mobno" >
+    </div>
+    <div>
+        enq_requird_amount : <input  type="text" formControlName="enq_requird_amount" placeholder="enter enq_requird_amount" >
+    </div>
+    <div>
+        enq_age : <input  type="text" formControlName="enq_age" placeholder="enter enq_age" >
+    </div>
+    <div>
+        electronic_product_name : <input  type="text" formControlName="electronic_product_name" placeholder="enter electronic_product_name" >
+    </div>
+    <div>
+        status : <input  type="text" formControlName="status" placeholder="enter status" >
+    </div>
+    <div>
+        email : <input  type="text" formControlName="email" placeholder="enter email" >
+    </div>
+    <div>
+        verifybyre : <input  type="text" formControlName="verifybyre" placeholder="enter verifybyre" >
+    </div>
+    
+    <button class="btn btn-primary" type="submit" >Update</button>
+   <a routerLink="/enquiry/display">To Display</a>
+    </form>

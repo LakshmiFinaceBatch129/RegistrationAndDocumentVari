@@ -1,0 +1,83 @@
+
+<div *ngFor="let x of customerdata">
+    <h3>Customer Details</h3>
+    customerloanamount:={{x.customerLoanAmount}}<br>
+    customerLoanType:={{x.customerLoanType}}<br>
+    tenure:={{x.tenure}}<br>
+    customerAge:={{x.customerAge}}<br>
+    customerpancardno:={{x.customerPancardNo}}<br>
+    customerAdhardNo:={{x.customerAdhardNo}}<br>
+    verifybyoe:={{x.verifybyoe}}<br>
+
+    <h3>Customer(User) Personal Details</h3>
+    username:={{x.user.username}}<br>
+    password:={{x.user.password}}<br>
+    role:={{x.user.role}}<br>
+    firstname:={{x.user.firstname}}<br>
+    lastname:={{x.user.lastname}}<br>
+    email:={{x.user.email}}<br>
+    mobile:={{x.user.mobile}}<br>
+    dob:={{x.user.dob}}<br>
+    gender:={{x.user.gender}}
+
+    <h3>Customer (User Address) Details</h3>
+    loaclHouseNo:={{x.user.address.loaclHouseNo}}<br>
+    localArea:={{x.user.address.localArea}}<br>
+    localLandmark:={{x.user.address.localLandmark}}<br>
+    localCity:={{x.user.address.localCity}}<br>
+    permanantHouseNo:={{x.user.address.permanantHouseNo}}<br>
+    permanantArea:={{x.user.address.permanantArea}}<br>
+    permanantLandmark:={{x.user.address.permanantLandmark}}<br>
+    permanantcity:={{x.user.address.permanantcity}}<br>
+    country:={{x.user.address.country}}<br>
+
+    <h3>Customer (Electronics product details) Details</h3>
+    <div *ngFor="let y of x.electronicProduct">
+        productCompany:={{y.productCompany}}<br>
+        productName:={{y.productName}}<br>
+        productPrice:={{y.productPrice}}<br>
+        dealerName:={{y.dealerName}}<br>
+    </div>
+
+    
+    <h3>Customer (Bank details) Details</h3>
+    <div *ngFor="let z of x.bank">
+        bankName:={{z.bankName}}<br>
+        accountNumber:={{z.accountNumber}}<br>
+        accountHolderName:={{z.accountHolderName}}<br>
+        bankIfsc:={{z.bankIfsc}}<br>
+        bankMicr:={{z.bankMicr}}<br>
+        bankAddress:={{z.bankAddress}}<br>
+    </div>
+
+    
+    <h3>Customer (Guaranter details) Details</h3>
+    <div *ngFor="let a of x.guaranter">
+        guaranterName:={{a.guaranterName}}<br>
+        guaranterAddress:={{a.guaranterAddress}}<br>
+        guaranterRelationWithcustomer:={{a.guaranterRelationWithcustomer}}<br>
+        guranterMobileNo:={{a.guranterMobileNo}}<br>
+        addharCardNo:={{a.addharCardNo}}<br>
+        pancardno:={{a.pancardno}}<br>
+        jobdetails:={{a.jobdetails}}<br>
+    </div>
+
+    <h3>Customer (Previuos Loan details) Details</h3>
+    <div *ngFor="let b of x.loandetails">
+        previousLoanamount:={{b.previousLoanamount}}<br>
+        previousLoanStatus:={{b.previousLoanStatus}}<br>
+          tenure:={{b.tenure}}<br>
+          paidAmount:={{b.paidAmount}}<br>
+          reaminingAmount:={{b.reaminingAmount}}<br>
+          <h3>Customer (Previuos Loan Bank details) Details</h3>
+          <div *ngFor="let c of b.bank">
+            bankName:={{c.bankName}}<br>
+            accountNumber:={{c.accountNumber}}<br>
+            accountHolderName:={{c.accountHolderName}}<br>
+            bankIfsc:={{c.bankIfsc}}<br>
+            bankMicr:={{c.bankMicr}}<br>
+            bankAddress:={{c.bankAddress}}<br>
+          </div>
+    </div>
+</div>
+

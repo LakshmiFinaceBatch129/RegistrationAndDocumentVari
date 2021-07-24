@@ -1,0 +1,333 @@
+<form [formGroup]="customerform" (ngSubmit)="onSubmit()" style="text-align: center;">
+  <h3 style="text-align: center; color: darkviolet;">! Customer Registration Form !</h3>
+  <h2>Customer Details</h2>
+  <div>
+    customerLoanAmount : <input type="text" formControlName="customerLoanAmount" placeholder="enter customerLoanAmount">
+  </div>
+  <br>
+  <div>
+    customerLoanType:<input type="text" formControlName="customerLoanType" placeholder="enter customerLoanType">
+  </div><br>
+  <div>
+    tenure:<input type="number" formControlName="tenure" placeholder="enter tenure">
+  </div><br>
+  <div>
+    customerAge:<input type="number" formControlName="customerAge" placeholder="enter customerAge">
+  </div><br>
+  <div>
+    customerPancardNo:<input type="text" formControlName="customerPancardNo" placeholder="enter customerpancardno">
+  </div><br>
+  <div>
+    customerAdhardNo:<input type="text" formControlName="customerAdhardNo" placeholder="enter customerAdhardNo">
+  </div><br>
+  <div>
+    verifybyoe:<input type="hidden" formControlName="verifybyoe" placeholder="enter verifybyoe">
+  </div><br>
+
+  <h2>User Details</h2>
+  <div formGroupName="user">
+    <div> username:<input type="text" formControlName="username" placeholder=" enter username">
+    </div> <br>
+    <div>
+      password:<input type="text" formControlName="password" placeholder="enter password">
+    </div><br>
+    <div>
+      role:<input type="text" formControlName="role" placeholder="enter role">
+    </div><br>
+    <div>
+      firstname:<input type="text" formControlName="firstname" placeholder="enter firstname">
+    </div><br>
+    <div>
+      lastname:<input type="text" formControlName="lastname" placeholder="enter lastname">
+    </div><br>
+    <div>
+      email:<input type="text" formControlName="email" placeholder="enter email">
+    </div><br>
+    <div>
+      mobile:<input type="text" formControlName="mobile" placeholder="enter mobile">
+    </div><br>
+    <div>
+      dob:<input type="text" formControlName="dob" placeholder="enter dob">
+    </div><br>
+    <div>
+      gender:<input type="text" formControlName="gender" placeholder="enter gender">
+    </div><br>
+
+    <h2>Address Details</h2>
+    <div formGroupName="address">
+      <div> loaclHouseNo:<input type="text" formControlName="loaclHouseNo" placeholder=" enter loacalhouseno">
+      </div> <br>
+      <div>
+        localArea:<input type="text" formControlName="localArea" placeholder="enter localarea">
+      </div><br>
+      <div>
+        localLandmark:<input type="text" formControlName="localLandmark" placeholder="enter locallandmark">
+      </div><br>
+      <div>
+        localCity:<input type="text" formControlName="localCity" placeholder="enter localcity">
+      </div><br>
+    
+      <div>
+        permanantHouseNo:<input type="text" formControlName="permanantHouseNo" placeholder="enter permananthouseno">
+      </div><br>
+      <div>
+        permanantArea:<input type="text" formControlName="permanantArea" placeholder="enter permanantarea">
+      </div><br>
+      <div>
+        permanantLandmark:<input type="text" formControlName="permanantLandmark" placeholder="permanantlandmark">
+      </div><br>
+      <div>
+        permanantcity:<input type="text" formControlName="permanantcity" placeholder="enter permanatcity">
+      </div><br>
+   
+      <div>
+        country:<input type="text" formControlName="country" placeholder="enter country">
+      </div>
+      <br>
+    </div>
+  </div>
+
+  <h2>electronicproduct Details</h2>
+  <div formArrayName="electronicProduct">
+    <div *ngFor="let mob of customerform.controls.electronicProduct.value; let i=index">
+      <div>
+        <span>electronicproduct no:-{{i + 1}}</span><br>
+        <a *ngIf="customerform.controls.electronicProduct.value.length >=0"
+          (click)="removeelectronicproduct(i)">****remove electronicproduct****
+        </a>
+      </div>
+      <div [formGroupName]="i">
+        <div>
+          <label>productCompany</label>
+          <input type="text" formControlName="productCompany" placeholder="Enter productCompany">
+        </div>
+
+        <div>
+          <label>productName</label>
+          <input type="text" formControlName="productName" placeholder="Enter productName">
+        </div>
+
+        <div>
+          <label>productPrice</label>
+          <input type="text" formControlName="productPrice" placeholder="Enter productPrice">
+        </div>
+
+        <div>
+          <label>dealerName</label>
+          <input type="text" formControlName="dealerName" placeholder="Enter dealerName">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <a (click)="addelectronicproduct()">
+      *****Add another electronicproduct*****
+    </a>
+  </div>
+
+
+  <h2>bankdetails Details</h2>
+  <div formArrayName="bank">
+    <div *ngFor="let mob of customerform.controls.bank.value; let i=index">
+      <div>
+        <span>bankdetails no:-{{i + 1}}</span><br>
+        <span *ngIf="customerform.controls.bank.value.length > 1" (click)="removebankdetails(i)">****remove
+          bankdetails****
+        </span>
+      </div>
+      <div [formGroupName]="i">
+        <div>
+          <label>bankName</label>
+          <input type="text" formControlName="bankName" placeholder="Enter bankname">
+        </div>
+
+        <div>
+          <label>accountNumber</label>
+          <input type="text" formControlName="accountNumber" placeholder="Enter accountnumber">
+        </div>
+
+        <div>
+          <label>accountHolderName</label>
+          <input type="text" formControlName="accountHolderName" placeholder="Enter accountholdername">
+        </div>
+
+        <div>
+          <label>bankIfsc</label>
+          <input type="text" formControlName="bankIfsc" placeholder="Enter bankIFSC">
+        </div>
+
+        <div>
+          <label>bankMicr</label>
+          <input type="text" formControlName="bankMicr" placeholder="Enter bankMIRC">
+        </div>
+
+        <div>
+          <label>bankAddress</label>
+          <input type="text" formControlName="bankAddress" placeholder="Enter pbankaddress">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <a (click)="addbankdetails()">
+      *****Add another bankdetails*****
+    </a>
+  </div>
+
+  <h2>guaranterdetails Details</h2>
+  <div formArrayName="guaranter">
+    <div *ngFor="let mob of customerform.controls.guaranter.value; let i=index">
+      <div>
+        <span>bankdetails no:-{{i + 1}}</span><br>
+        <span *ngIf="customerform.controls.guaranter.value.length >=0" (click)="removeguaranterdetails(i)">****remove guaranterdetails****
+        </span>
+      </div>
+      <div [formGroupName]="i">
+        <div>
+          <label>guaranterName</label>
+          <input type="text" formControlName="guaranterName" placeholder="Enter guarantername">
+        </div>
+
+        <div>
+          <label>guaranterAddress</label>
+          <input type="text" formControlName="guaranterAddress" placeholder="Enter guaranteraddress">
+        </div>
+
+        <div>
+          <label>guaranterRelationWithcustomer</label>
+          <input type="text" formControlName="guaranterRelationWithcustomer"
+            placeholder="Enter guaranterRelationWithcustomer">
+        </div>
+
+        <div>
+          <label>guranterMobileNo</label>
+          <input type="text" formControlName="guranterMobileNo" placeholder="Enter guarantermobileno">
+        </div>
+
+        <div>
+          <label>addharCardNo</label>
+          <input type="text" formControlName="addharCardNo" placeholder="Enter adharcardno">
+        </div>
+
+        <div>
+          <label>pancardno</label>
+          <input type="text" formControlName="pancardno" placeholder="Enter pancardno">
+        </div>
+
+
+        <div>
+          <label>jobdetails</label>
+          <input type="text" formControlName="jobdetails" placeholder="Enter jobdetails">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <a (click)="addguaranterdetails()">
+      *****Add another guaranterdetails*****
+    </a>
+  </div>
+
+<h2>previousloandetails Details</h2>
+  <div formArrayName="loandetails">
+    <div *ngFor="let mob of customerform.controls.loandetails.value; let i=index">
+       <div>
+        <span>bankdetails no:-{{i + 1}}</span><br>
+        <span *ngIf="customerform.controls.loandetails.value.length >=1" 
+          (click)="removepreviousloandetails(i)">****remove guaranterdetails****
+        </span>
+      </div>
+      <div [formGroupName]="i">
+        <div>
+          <label>previousLoanamount</label>
+          <input type="text" formControlName="previousLoanamount" placeholder="Enter previousloanamount">
+        </div>
+
+        <div>
+          <label>previousLoanStatus</label>
+          <input type="text" formControlName="previousLoanStatus" placeholder="Enter previousloanstatus">
+        </div>
+
+        <div>
+          <label>tenure</label>
+          <input type="text" formControlName="tenure"
+            placeholder="Enter tenure">
+        </div>
+
+        <div>
+          <label>paidAmount</label>
+          <input type="text" formControlName="paidAmount"
+            placeholder="Enter paidamount">
+        </div>
+
+        <div>
+          <label>reaminingAmount</label>
+          <input type="text" formControlName="reaminingAmount"
+            placeholder="Enter reaminingamount">
+        </div>
+      <!-- </div>
+    </div> -->
+  <div>
+    <a (click)="addpreviousloandetails()">
+      *****Add another guaranterdetails*****
+    </a>
+  </div>
+
+
+
+  <h2>bankdetails Details</h2>
+  <div formArrayName="bank">
+    <div *ngFor="let mob of customerform.controls.bank.value; let i=index">
+      <div>
+        <span>bankdetails no:-{{i + 1}}</span><br>
+        <span *ngIf="customerform.controls.bank.value.length >=1" (click)="removebankdetails(i)">****remove
+          bankdetails****
+        </span>
+      </div>
+      <div [formGroupName]="i">
+        <div>
+          <label>bankName</label>
+          <input type="text" formControlName="bankName" placeholder="Enter bankname">
+        </div>
+
+        <div>
+          <label>accountNumber</label>
+          <input type="text" formControlName="accountNumber" placeholder="Enter accountnumber">
+        </div>
+
+        <div>
+          <label>accountHolderName</label>
+          <input type="text" formControlName="accountHolderName" placeholder="Enter accountholdername">
+        </div>
+
+        <div>
+          <label>bankIfsc</label>
+          <input type="text" formControlName="bankIfsc" placeholder="Enter bankIFSC">
+        </div>
+
+        <div>
+          <label>bankMicr</label>
+          <input type="text" formControlName="bankMicr" placeholder="Enter bankMIRC">
+        </div>
+
+        <div>
+          <label>bankAddress</label>
+          <input type="text" formControlName="bankAddress" placeholder="Enter pbankaddress">
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </div>
+  <div>
+    <a (click)="addbankdetails()">
+      *****Add another bankdetails*****
+    </a>
+  </div>
+
+</div>  
+
+  <button class="btn btn-primary" type="submit">Customer Registration</button><br>
+  <a routerLink="/customer/display">too customer display</a>
+
+</form>
